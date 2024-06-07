@@ -10,7 +10,7 @@ export default async function StockDetailPage({params}:{params:{ticker:string,sy
     const {ticker, symbolInfo} = params;
 
     const result =  await fetchStockPrice(ticker);
-    if(result === null)return <div>Stock price not available</div>;
+    if(result === null)return <div>Stock price not available (API limit?)</div>;
     const quote = formatQuoteInfo(result);
 
 

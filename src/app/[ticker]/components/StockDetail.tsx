@@ -10,81 +10,82 @@ interface StockDetailProps {
 
 const StockDetail = (props:StockDetailProps) => {
     const { name, symbol, type, region, marketOpen, marketClose, timezone, currency, currentPrice, open, high, low, volume, latestTradingDay, previousClose, change, changePercent, } = props.details;
+
     return (
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <h2 className="text-lg font-semibold mb-2">Stock Information</h2>
-          <ul className="list-none p-0">
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Symbol:</span> {symbol}
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-lg font-bold">Stock Information</h2>
+          <ul className="list-none">
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Symbol:</span> {symbol}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Name:</span> {name}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Name:</span> {name}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Type:</span> {type}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Type:</span> {type}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Region:</span> {region}
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-lg font-semibold mb-2">Market Information</h2>
-          <ul className="list-none p-0">
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Market Open:</span> {marketOpen}
-            </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Market Close:</span> {marketClose}
-            </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Timezone:</span> {timezone}
-            </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Currency:</span> {currency}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Region:</span> {region}
             </li>
           </ul>
         </div>
-        <div>
-          <h2 className="text-lg font-semibold mb-2">Price Information</h2>
-          <ul className="list-none p-0">
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Current Price:</span> ${currentPrice}
+        <div className="flex flex-col gap-2">
+          <h2 className="text-lg font-bold">Market Information</h2>
+          <ul className="list-none">
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Market Open:</span> {marketOpen}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Open:</span> ${open}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Market Close:</span> {marketClose}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">High:</span> ${high}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Timezone:</span> {timezone}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Low:</span> ${low}
-            </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Volume:</span> {volume}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Currency:</span> {currency}
             </li>
           </ul>
         </div>
-        <div>
-          <h2 className="text-lg font-semibold mb-2">Trading Information</h2>
-          <ul className="list-none p-0">
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Latest Trading Day:</span> {latestTradingDay}
+        <div className="flex flex-col gap-2">
+          <h2 className="text-lg font-bold">Price Information</h2>
+          <ul className="list-none">
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Current Price:</span> ${currentPrice}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Previous Close:</span> ${previousClose}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Open:</span> ${open}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Change:</span> ${change}
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">High:</span> ${high}
             </li>
-            <li className="mb-2">
-              <span className="text-gray-600 font-semibold">Change Percent:</span> {changePercent}%
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Low:</span> ${low}
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Volume:</span> {volume}
             </li>
           </ul>
         </div>
-    </div>
-  );
+        <div className="flex flex-col gap-2">
+          <h2 className="text-lg font-bold">Trading Information</h2>
+          <ul className="list-none">
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Latest Trading Day:</span> {latestTradingDay}
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Previous Close:</span> ${previousClose}
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Change:</span> ${change}
+            </li>
+            <li className="flex items-center">
+              <span className="text-gray-600 font-semibold w-24 inline-block">Change Percent:</span> {changePercent}%
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
 };
 
 export default StockDetail;
