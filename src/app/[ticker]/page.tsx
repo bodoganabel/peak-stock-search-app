@@ -1,5 +1,6 @@
 import { IStockDetails } from "@/interfaces/stocks.types";
 import { fetchStockPrice, formatQuoteInfo, fetchStockSymbols, formatSymbolInfo } from "@/services/stock.service";
+import StockDetail from "./components/StockDetail";
 
 
 
@@ -19,7 +20,7 @@ export default async function StockDetailPage({params}:{params:{ticker:string,sy
         const parsedSymbols = result.map(formatSymbolInfo);
 
 
-        const bestMatch = parsedSymbols.reduce((accumulator, current) => {
+        const bestMatch = parsedSymbols.reduce((accumulator: { matchScore: any; }, current: { matchScore: any; }) => {
             const currentScore = current.matchScore;
             const accumulatorScore = accumulator.matchScore;
 
@@ -34,12 +35,12 @@ export default async function StockDetailPage({params}:{params:{ticker:string,sy
             return <div>No stock found with the ticker {ticker}</div>;
         }
         const details:any = {...bestMatch,...quote};
-        return <div>{details.name}</div>
+        return <StockDetail details={details} />
 
     }
     const details:any = {...symbolInfo,...quote};
 
     return (
-        <div>{details.name}</div>
+        <StockDetail details={details} />
     );
 }
