@@ -1,5 +1,4 @@
-import HomepageSearch from "@/components/HomepageSearch";
-import Image from "next/image";
+import HomepageSearch from "./components/HomepageSearch";
 
 export default function Home() {
   return (
